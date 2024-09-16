@@ -1,33 +1,34 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-export const createRoom = () => {
-  const [loading, setLoading] = useState(false);
+export const joinRoomHook = () => {
+  const [loading1, setLoading] = useState(false);
 
 
-  const createRoomId = async (username) => {
+  const joinRoomId = async (username,gameId) => {
     setLoading(true);
+    
     if (!username) {
       return alert("Enter A Valid Username");
     }
-    const data = await fetch("api/v1/createRoom", {
+    const data = await fetch("api/v1/joinRoom", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username }),
+      body: JSON.stringify({ gameId,username }),
     });
     if (!data.ok) {
       setLoading(false);
       const res= await data.json()
       toast.error(res.message)
-      return
+     return
     }
     const response = await data.json()
-    toast.success("Room Created")
+    toast.success("Joinning Room")
     setLoading(false);
     return response
   };
 
-  return [loading, createRoomId];
+  return [loading1, joinRoomId];
 };
