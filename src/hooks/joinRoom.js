@@ -11,7 +11,7 @@ export const joinRoomHook = () => {
     if (!username) {
       return alert("Enter A Valid Username");
     }
-    const data = await fetch("api/v1/joinRoom", {
+    const data = await fetch("https://tic-tac-toe-bcakend.onrender.com/api/v1/joinRoom", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

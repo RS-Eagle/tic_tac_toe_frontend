@@ -7,7 +7,7 @@ export const useInputHook = ()=>{
     console.log(obj)
     const {gameId,pos,inputid} = obj
     console.log(gameId,pos,inputid)
-    const data = await fetch("api/v1/inputHandler", {
+    const data = await fetch("https://tic-tac-toe-bcakend.onrender.com/api/v1/inputHandler", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
