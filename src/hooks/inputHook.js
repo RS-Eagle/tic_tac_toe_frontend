@@ -22,7 +22,6 @@ export const useInputHook = ()=>{
    
     }
     const response = await data.json()
-    toast.success("Room Created")
   
     return response
     }
