@@ -63,6 +63,7 @@ const MainGame = () => {
         <p className="text-2xl text-center text-white mt-1">{userName}</p>
         <p className="text-center text-white mt-1">You Are: {yourWeapon}</p>
         <p className="text-center text-white my-1">{turn?"Your Turn":"Opponent Turn"}</p>
+        {userGame.winner == true? <p className="text-center text-white my-1">{userGame.winnerid}</p>:"" }
 
         <div className="board grid grid-cols-3 gap-2 w-80 h-80 mx-auto">
           {userGame.box.map((e,i) => {

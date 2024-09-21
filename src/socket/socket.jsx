@@ -17,7 +17,7 @@ export const SocketContextProvider = ({ children }) => {
 	const socketConnection = (id) => {
 		console.log(userGame)
 		if (userGame) {
-			const socket = io("http://localhost:3000", {
+			const socket = io("https://tic-tac-toe-bcakend.onrender.com", {
 				query: {
 					userid: id,
 				},
